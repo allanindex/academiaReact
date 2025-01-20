@@ -10,10 +10,11 @@ body, html {
   .sidebar {
     background-color: #e3e3e3;
     color: black;
-    width: 5vw; 
+    width: 4vw; 
     height: 100vh;
     transition: width 0.3s ease;
     overflow: hidden;
+    border-right: 1px solid rgb(180, 180, 180);
 
   }
   

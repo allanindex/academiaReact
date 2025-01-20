@@ -90,7 +90,7 @@ function MainContent(){
                 <Box gridColumn={'span 3'} className="bigGraph" >
                     <MyLineChart />
                 </Box>
-                <Box className="mediumGraph"  gridColumn={'span 2'}></Box>
+                <Box className="mediumGraph"  gridColumn={'span 2'}>Novos alunos</Box>
                 <Box gridColumn={'span 3'} className="bigGraph" ><Example2/></Box>
                 <Box
                     css={{
@@ -110,9 +110,9 @@ function MainContent(){
                     gridColumn={'span 2'}
                 >
                     <Box boxShadow={'0px 3px 10px -3px'}>
-                        <Example />
+                       
                     </Box>
-                    <Box boxShadow={'0px 3px 10px -3px'}>teste 2.2</Box>
+                    <Box boxShadow={'0px 3px 10px -3px'}></Box>
                 </Box>
                
                 
