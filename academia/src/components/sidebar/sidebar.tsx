@@ -23,10 +23,10 @@ const Sidebar = () => {
         </Flex>
         
         <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'45px'}>
-          <Flex w={'100%'} justifyContent={isExpanded ? 'flex-start': 'center'} flexDir={'row'}><a href="#" className="option"><IoHome size={'25px'} color={'white'}/> {isExpanded ? ' Home' : ''}</a></Flex>
-          <Flex w={'100%'} justifyContent={isExpanded ? 'flex-start': 'center'}><a href="#" className="option"><GoPersonFill size={'25px'} color={'white'}/> {isExpanded ?  ' Alunos' : ''}</a></Flex>
-          <Flex w={'100%'} justifyContent={isExpanded ? 'flex-start': 'center'}><a href="#" className="option"><GoGraph size={'25px'} color={'white'}/> {isExpanded ? ' Financeiro' : ''}</a></Flex>
-          <Flex w={'100%'} justifyContent={isExpanded ? 'flex-start': 'center'}><a href="#" className="option"><IoMdSettings size={'25px'} color={'white'}/> {isExpanded ? ' Configurações' : ''}</a></Flex>
+          <Flex w={'100%'} justifyContent={isExpanded ? 'flex-start': 'center'} flexDir={'row'}><a href="#" className="option"><Box bg={'white'} p={'8px'} borderRadius={'10px'}><IoHome size={'25px'} /></Box> {isExpanded ? ' Home' : ''}</a></Flex>
+          <Flex w={'100%'} justifyContent={isExpanded ? 'flex-start': 'center'}><a href="#" className="option"><Box bg={'white'} p={'8px'} borderRadius={'10px'}><GoPersonFill size={'25px'} /></Box> {isExpanded ?  ' Alunos' : ''}</a></Flex>
+          <Flex w={'100%'} justifyContent={isExpanded ? 'flex-start': 'center'}><a href="#" className="option"><Box bg={'white'} p={'8px'} borderRadius={'10px'}><GoGraph size={'25px'} /></Box>{isExpanded ? ' Financeiro' : ''}</a></Flex>
+          <Flex w={'100%'} justifyContent={isExpanded ? 'flex-start': 'center'}><a href="#" className="option"><Box bg={'white'} p={'8px'} borderRadius={'10px'}><IoMdSettings size={'25px'} /> </Box> {isExpanded ? ' Configurações' : ''}</a></Flex>
         </Flex>
       </Box>
   );
