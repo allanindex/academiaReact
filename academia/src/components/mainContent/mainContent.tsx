@@ -4,10 +4,11 @@ import { GoPersonFill } from "react-icons/go";
 import { FaCalendarTimes } from "react-icons/fa";
 import { BsPersonCheckFill } from "react-icons/bs";
 import MyLineChart from "../charts/lineChart";
+import Example2 from "../charts/barChart";
 import Example from "../charts/pieChart";
 function MainContent(){
     return(
-        <Box bg={'rgb(227, 227, 227)'} h={'92vh'} color={'black'} p={'20px 2vw 0 15px'}>
+        <Box bg={'rgb(227, 227, 227)'} h={'92vh'} color={'black'} p={'10px 2vw 0 15px'}>
             <Text fontWeight={'bold'}>Overview</Text>
             <Flex
               css={{
@@ -88,8 +89,8 @@ function MainContent(){
                 <Box gridColumn={'span 3'} className="bigGraph" >
                     <MyLineChart />
                 </Box>
-                <Box className="mediumGraph"  gridColumn={'span 2'}><Example /></Box>
-                <Box gridColumn={'span 3'} className="bigGraph" >Teste 3</Box>
+                <Box className="mediumGraph"  gridColumn={'span 2'}></Box>
+                <Box gridColumn={'span 3'} className="bigGraph" ><Example2/></Box>
                 <Box
                     css={{
                         "& > div":{
@@ -107,8 +108,8 @@ function MainContent(){
                     p={'0'}
                     gridColumn={'span 2'}
                 >
-                    <Box zIndex={'2'}>
-                        
+                    <Box>
+                        <Example />
                     </Box>
                     <Box>teste 2.2</Box>
                 </Box>

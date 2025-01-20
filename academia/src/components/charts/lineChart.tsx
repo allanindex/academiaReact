@@ -10,10 +10,10 @@ const data = [
     { name: 'Jun', uv: 239, pv: 2000, amt: 1900 },
     { name: 'Jul', uv: 349, pv: 2100, amt: 2000 },
     { name: 'Ago', uv: 430, pv: 2400, amt: 2300 },
-    { name: 'Set', uv: 300, pv: 2100, amt: 2000 },
-    { name: 'Out', uv: 400, pv: 2500, amt: 2400 },
-    { name: 'Nov', uv: 200, pv: 2200, amt: 2100 },
-    { name: 'Dez', uv: 278, pv: 2300, amt: 2200 },
+    { name: 'Set', uv: null, pv: 2100, amt: 2000 },
+    { name: 'Out', uv: null, pv: 2500, amt: 2400 },
+    { name: 'Nov', uv: null, pv: 2200, amt: 2100 },
+    { name: 'Dez', uv: null, pv: 2300, amt: 2200 },
 ];
 
 const MyLineChart = () => (
