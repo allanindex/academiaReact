@@ -8,43 +8,24 @@ body, html {
   
 
   .sidebar {
-    background-color: #e3e3e3;
-    color: black;
-    width: 4vw; 
     height: 100vh;
     transition: width 0.3s ease;
     overflow: hidden;
-    border-right: 1px solid rgb(180, 180, 180);
 
   }
-  
-  .sidebar.expanded {
-    width: 14vw; 
-  }
-  
-  .sidebar .toggle-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    margin: 10px;
-  }
-  
+
+
   .sidebar .menu {
     list-style: none;
     padding: 0;
-    margin: 20px 0 0 0;
+   
   }
   
-  .sidebar .menu li {
-    margin: 15px 0;
-  }
-  
+
   .sidebar .menu li a {
     text-decoration: none;
     color: white;
-    padding: 10px 15px;
+    
     display: flex;
     transition: background 0.2s ease;
   }
@@ -53,8 +34,3 @@ body, html {
     background-color: #2e2e2e;
   }
   
-.option{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}

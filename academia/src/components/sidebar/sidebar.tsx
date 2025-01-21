@@ -1,42 +1,46 @@
-import React, { useState } from "react";
 import "./sidebar.css";
-import { Box, Container, Flex } from "@chakra-ui/react";
-import { MdOutlineMenu } from "react-icons/md";
-import { FaArrowLeft } from "react-icons/fa";
-import { IoHome } from "react-icons/io5";
-import { GoPersonFill } from "react-icons/go";
+import { Box, Flex } from "@chakra-ui/react";
+import { VscHome } from "react-icons/vsc";
+import { RxPerson } from "react-icons/rx";
 import { GoGraph } from "react-icons/go";
-import { IoMdSettings } from "react-icons/io";
+import { IoSettingsOutline } from "react-icons/io5";
+import { Text, Separator  } from "@chakra-ui/react";
+
 const Sidebar = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsExpanded(!isExpanded);
-  };
-
+const logo =  '/img/logo-dark.png'
   return (
-      <Box className={`sidebar ${isExpanded ? "expanded" : ""}`}  pl={isExpanded ? '2vw' : '0'}>
-        <Flex w={'100%'} justifyContent={isExpanded ? 'flex-end' : 'center'} p={'10px'} mb={'45px'}>
-            <button className="toggle-btn" onClick={toggleSidebar}>
-            {isExpanded ? <FaArrowLeft size={'25px'} color="#F15927"/> : <MdOutlineMenu size={'30px'}  color="#F15927"/>}
-            </button>
+      <Box className={'sidebar'} p={'20px'} w={'15vw'}>
+        <Flex w={'100%'} justifyContent={'flex-start'}  h={'5vh'} alignItems={'center'} gap={'10px'}>  
+            <Box h={'4vh'} w={'4vh'} bg={'#2D7DD2'} borderRadius={'50%'} p={'5px'} display={'flex'} alignItems={'center'}>
+            <img src={logo} alt="" />
+            </Box>
+            <Text>BodyFit</Text>
         </Flex>
-        
-        <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'10px'} 
+        <Box
+          height={'6.5vh'}
+          borderRadius={'10px'}
+          padding={'10px'}
+          bg={'rgb(131, 131, 131)'}
+          m={'2vh 0'}
+        >Profile</Box>
+        <Separator mb={'2vh'} />
+        <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'15px'} 
         css={{
           "& > div":{
             p:'10px',
-            borderRadius: '10px'
+            borderRadius: '10px',
+            color: 'rgb(175, 175, 175)'
           },
-          "& > div > a > div > svg:hover":{
-            color: '#F15927',
+          "& > div:hover":{
+            color: 'white',
+            bg: '#2D7DD2'
           }
         }}
         >
-          <Flex w={'100%'} justifyContent={isExpanded ? 'flex-start': 'center'}><a href="#" className="option"><Box bg={'white'} p={'8px'} borderRadius={'10px'}><IoHome size={'25px'} /></Box> {isExpanded ? ' Home' : ''}</a></Flex>
-          <Flex w={'100%'} justifyContent={isExpanded ? 'flex-start': 'center'}><a href="#" className="option"><Box bg={'white'} p={'8px'} borderRadius={'10px'}><GoPersonFill size={'25px'} /></Box> {isExpanded ?  ' Alunos' : ''}</a></Flex>
-          <Flex w={'100%'}  justifyContent={isExpanded ? 'flex-start': 'center'}><a href="#" className="option"><Box bg={'white'} p={'8px'} borderRadius={'10px'}><GoGraph size={'25px'} /></Box>{isExpanded ? ' Financeiro' : ''}</a></Flex>
-          <Flex w={'100%'}  justifyContent={isExpanded ? 'flex-start': 'center'}><a href="#" className="option"><Box bg={'white'} p={'8px'} borderRadius={'10px'}><IoMdSettings size={'25px'} /> </Box> {isExpanded ? ' Configurações' : ''}</a></Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'5vh'} alignItems={'center'} justifyContent={'flex-start'}><VscHome size={'25px'} /> Home</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'5vh'} alignItems={'center'} justifyContent={'flex-start'}><RxPerson size={'25px'} />Alunos</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'5vh'} alignItems={'center'}  justifyContent={'flex-start'}><GoGraph size={'25px'} />Financeiro</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'5vh'} alignItems={'center'}  justifyContent={'flex-start'}><IoSettingsOutline size={'25px'} /> Configurações</Flex>
         </Flex>
       </Box>
   );

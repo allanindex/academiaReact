@@ -5,10 +5,9 @@ import { FaCalendarTimes } from "react-icons/fa";
 import { BsPersonCheckFill } from "react-icons/bs";
 import MyLineChart from "../charts/lineChart";
 import Example2 from "../charts/barChart";
-import Example from "../charts/pieChart";
 function MainContent(){
     return(
-        <Box bg={'#e3e3e3'} h={'92vh'} color={'black'} p={'10px 2vw 0 15px'}>
+        <Box bg={'#181D26'} h={'97vh'} color={'black'} p={'10px 2vw 0 15px'} w={'84vw'} borderRadius={'10px'}>
             <Text fontWeight={'bold'}>Overview</Text>
             <Flex
               css={{

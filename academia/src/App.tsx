@@ -1,19 +1,15 @@
 
-import { Flex, Box } from '@chakra-ui/react'
-import Navbar from './components/navbar/navbar'
+import { Flex } from '@chakra-ui/react'
 import Sidebar from './components/sidebar/sidebar'
 import MainContent from './components/mainContent/mainContent'
 function App() {
 
 
   return (
-   <Flex>
-    <Sidebar/>
-    <Flex w={'96vw'} flexDir={'column'}>
-      <Navbar/>
-      <MainContent/>
-    </Flex>
-   </Flex> 
+      <Flex w={'100vw'} flexDir={'row'} h={'100vh'} bg={'#090A0D'} alignItems={'center'}>
+        <Sidebar/>
+        <MainContent/>
+      </Flex> 
   )
 }
 
