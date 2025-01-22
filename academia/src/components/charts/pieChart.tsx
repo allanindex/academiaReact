@@ -66,24 +66,24 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-          <PieChart width={500} height={400}>
-            <Pie
-              activeIndex={this.state.activeIndex}
-              activeShape={renderActiveShape}
-              data={data}
-              cx="50%"
-              cy="50%"
-              innerRadius={60}
-              outerRadius={80}
-              dataKey="value"
-              onMouseEnter={this.onPieEnter}
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
-              ))}
-            </Pie>
-          </PieChart>
-          
+
+        <PieChart width={500} height={400}>
+          <Pie
+            activeIndex={this.state.activeIndex}
+            activeShape={renderActiveShape}
+            data={data}
+            cx="50%"
+            cy="50%"
+            innerRadius={60}
+            outerRadius={80}
+            dataKey="value"
+            onMouseEnter={this.onPieEnter}
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Pie>
+        </PieChart>
     );
   }
 }
