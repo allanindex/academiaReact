@@ -11,29 +11,29 @@ import { LuCalendarDays } from "react-icons/lu";
 
 function MainContent() {
     return (
-        <Box bg={'rgb(18, 21, 27)'} h={'97vh'} color={'black'} p={'25px 0.8vw'} w={'84vw'} borderRadius={'15px'}>
+        <Box bg={'rgb(18, 21, 27)'} h={'97vh'} color={'black'} p={'2vh 0.8vw'} w={'84vw'} borderRadius={'15px'}>
             <Text color={'white'} fontSize={'1.5rem'} mb={'10px'}>Overview</Text>
             <Flex
                 css={{
                     "& > div.card": {
                         width: '20%',
-                        height: '15vh',
+                        height: '16vh',
                         borderRadius: '15px',
                         color: 'rgb(209, 209, 209)',
                         padding: '12px',
                         fontSize: '1.2rem',
-                        bgGradient: "linear-gradient(45deg, #090A0D,rgba(4, 32, 66, 0.49))",
+                        bgGradient: "linear-gradient(45deg, #090A0D, #042042)",
                         boxShadow: '0px 3px 10px -3px black',
-                        gap: '10px'
+                        gap: '0.7vh'
                     },
                     "& > div.cardImpar": {
-                        bgGradient: "linear-gradient(45deg, #090A0D,rgba(30, 143, 214, 0.28))",
+                        bgGradient: "linear-gradient(45deg, #090A0D, #1e8fd6)",
                     },
                     "& > div.card > div.cardIcon": {
                         borderRadius: '50%',
                         border: '1px solid white',
-                        w: '2vw',
-                        h: '2vw',
+                        w: '2.1vw',
+                        h: '2.1vw',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: "center",
@@ -136,7 +136,7 @@ function MainContent() {
                             bg: '#090A0D',
                             borderRadius: '15px',
                             padding: '10px',
-                            height: '35vh',
+                            height: '34vh',
                             color: 'white',
                             p: '25px',
                             pl: '0'
@@ -148,7 +148,8 @@ function MainContent() {
                             alignItems: 'flex-start'
                         },
                         "& > div.mediumChart": {
-                            flexDir: 'column'
+                            flexDir: 'column',
+                            justifyContent: 'space-between'
                         },
                     }
                 }
@@ -160,12 +161,45 @@ function MainContent() {
 
                 <Flex className="chart mediumChart" gridColumn={'span 2'}>
                     <Box className="chartHeader">
-                        <Text fontSize={'1.2rem'} ml={'1.5vw'}>Alunos por plano</Text>
-                        
+                        <Text fontSize={'1.2rem'} ml={'1.5vw'}>Alunos por plano</Text> 
                     </Box>
-                    <Box w={'100%'} h={'90%'}>
-                            <Example/>
+                    <Flex alignItems={'center'} h={'25vh'} justifyContent={'space-between'} p={'0 2vw'}>
+                        <Box className="planOptions"
+                            css={{
+                              "& > div > div > span":{
+                                w:'1vw',
+                                h: '1vw',
+                                borderRadius: '50%',
+                               
+                              },
+                              "& > div > div":{
+                                alignItems: 'center',
+                                gap: '10px',
+                                color: 'rgb(193, 193, 193)'
+                              },
+                            }}
+                        >
+                           
+                                <Flex flexDir={'column'} gap={'10px'}>
+                                    <Flex><Box as={'span'}  bg={'#042042'}></Box>Premium</Flex>
+                                    <Flex><Box as={'span'}  bg={'#1e8fd6'}></Box>Platinum</Flex>
+                                    <Flex><Box as={'span'}  bg={'#ffffff'}></Box>Basic</Flex>
+                                </Flex>
+                            
+                              
                         </Box>
+                        <Box w={'50%'} h={'100%'} display={'block'}
+                            css={{
+                                "& > div":{
+                                   top: '-6vw',
+                                   left: '-10vw'
+                        
+                                }
+                            }}
+                        >
+                                <Example />
+                            </Box>
+                    </Flex>
                 </Flex>
                 <Flex gridColumn={'span 3'} className="chart bigChart" >
                     <Box className="chartHeader" >

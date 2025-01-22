@@ -37,10 +37,10 @@ const logo =  '/img/logo-dark.png'
           }
         }}
         >
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'5vh'} alignItems={'center'} justifyContent={'flex-start'}><VscHome size={'25px'} /> Home</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'5vh'} alignItems={'center'} justifyContent={'flex-start'}><RxPerson size={'25px'} />Alunos</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'5vh'} alignItems={'center'}  justifyContent={'flex-start'}><GoGraph size={'25px'} />Financeiro</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'5vh'} alignItems={'center'}  justifyContent={'flex-start'}><IoSettingsOutline size={'25px'} /> Configurações</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><VscHome size={'25px'} /> Home</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><RxPerson size={'25px'} />Alunos</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><GoGraph size={'25px'} />Financeiro</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><IoSettingsOutline size={'25px'} /> Configurações</Flex>
         </Flex>
       </Box>
   );

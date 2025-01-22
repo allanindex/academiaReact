@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, ResponsiveContainer, Tooltip } from 'recharts';
+import { PieChart, Pie, Sector, ResponsiveContainer, Tooltip, Cell } from 'recharts';
 
 const data = [
-  { name: 'Premium', value: 400 },
-  { name: 'Platinum', value: 300 },
-  { name: 'Basic', value: 300 },
+  { name: 'Premium', value: 400, color: '#042042' },
+  { name: 'Platinum', value: 300, color: '#1e8fd6' },
+  { name: 'Basic', value: 300, color: '#ffffff' },
 ];
 
-const renderActiveShape = (props:any) => {
+const renderActiveShape = (props: any) => {
   const RADIAN = Math.PI / 180;
   const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent, value } = props;
   const sin = Math.sin(-RADIAN * midAngle);
@@ -54,13 +54,11 @@ const renderActiveShape = (props:any) => {
 };
 
 export default class Example extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/pie-chart-with-customized-active-shape-y93si';
-
   state = {
     activeIndex: 0,
   };
 
-  onPieEnter = (_:any, index:any) => {
+  onPieEnter = (_: any, index: any) => {
     this.setState({
       activeIndex: index,
     });
@@ -68,22 +66,24 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer>
-        <PieChart width={400} height={400}>
-          <Pie
-            activeIndex={this.state.activeIndex}
-            activeShape={renderActiveShape}
-            data={data}
-            cx="50%"
-            cy="50%"
-            innerRadius={60}
-            outerRadius={80}
-            fill="#8884d8"
-            dataKey="value"
-            onMouseEnter={this.onPieEnter}
-          />
-        </PieChart>
-      </ResponsiveContainer>
+          <PieChart width={500} height={400}>
+            <Pie
+              activeIndex={this.state.activeIndex}
+              activeShape={renderActiveShape}
+              data={data}
+              cx="50%"
+              cy="50%"
+              innerRadius={60}
+              outerRadius={80}
+              dataKey="value"
+              onMouseEnter={this.onPieEnter}
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Pie>
+          </PieChart>
+          
     );
   }
 }
