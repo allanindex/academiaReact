@@ -11,7 +11,7 @@ const logo =  '/img/logo-dark.png'
   return (
       <Box className={'sidebar'} p={'20px'} w={'15vw'}>
         <Flex w={'100%'} justifyContent={'flex-start'}  h={'5vh'} alignItems={'center'} gap={'10px'}>  
-            <Box h={'4vh'} w={'4vh'} bg={'#2D7DD2'} borderRadius={'50%'} p={'5px'} display={'flex'} alignItems={'center'}>
+            <Box h={'4vh'} w={'4vh'} bg={'#042042'} borderRadius={'50%'} p={'5px'} display={'flex'} alignItems={'center'}>
             <img src={logo} alt="" />
             </Box>
             <Text>BodyFit</Text>
@@ -20,7 +20,7 @@ const logo =  '/img/logo-dark.png'
           height={'6.5vh'}
           borderRadius={'10px'}
           padding={'10px'}
-          bg={'rgb(131, 131, 131)'}
+          bg={'rgb(54, 54, 54)'}
           m={'2vh 0'}
         >Profile</Box>
         <Separator mb={'2vh'} />
@@ -33,7 +33,7 @@ const logo =  '/img/logo-dark.png'
           },
           "& > div:hover":{
             color: 'white',
-            bg: '#2D7DD2'
+            bg: 'rgb(4, 32, 66)'
           }
         }}
         >

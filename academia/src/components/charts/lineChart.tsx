@@ -19,10 +19,11 @@ const data = [
 const MyLineChart = () => (
     <ResponsiveContainer>
   <LineChart data={data}>
-    <XAxis dataKey="name" />
-    <YAxis />
+    <XAxis dataKey="name" stroke='#bdbdbd' axisLine={false} tickLine={false} />
+    <YAxis axisLine={false} tickLine={false}  stroke={'#bdbdbd'}/>
     <Tooltip />
-    <Line type="monotone" dataKey="uv" stroke="#F15927" strokeWidth={'3px'} />
+    <CartesianGrid horizontal={true}  vertical={false} strokeDasharray="3 3" stroke='rgba(245, 245, 245, 0.33)'/>
+    <Line type="monotone" dataKey="uv" stroke=" #063B7C" strokeWidth={'3px'} />
   </LineChart>
   </ResponsiveContainer>
 );

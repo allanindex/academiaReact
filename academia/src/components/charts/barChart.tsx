@@ -98,11 +98,10 @@ export default class Example2 extends PureComponent {
             bottom: 5,
           }}
         >
-     
-          <XAxis dataKey="name" />
-          <YAxis />
+          <XAxis dataKey="name" stroke='white'/>
+          <YAxis stroke='white'/>
           <Tooltip content={<CustomTooltip />}/>
-          <Bar dataKey="pv" barSize={35} fill="#171614" />
+          <Bar dataKey="pv" barSize={35} fill="#063B7C" />
         </BarChart>
       </ResponsiveContainer>
     );
