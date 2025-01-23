@@ -3,45 +3,45 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 const data = [
   {
-    name: 'Page A',
+    name: 'Seg',
     uv: 4000,
-    pv: 2400,
+    pv: 400,
     amt: 2400,
   },
   {
-    name: 'Page B',
+    name: 'Ter',
     uv: 3000,
-    pv: 1398,
+    pv: 398,
     amt: 2210,
   },
   {
-    name: 'Page C',
+    name: 'Qua',
     uv: 2000,
-    pv: 9800,
+    pv: 100,
     amt: 2290,
   },
   {
-    name: 'Page D',
+    name: 'Qui',
     uv: 2780,
-    pv: 3908,
+    pv: 208,
     amt: 2000,
   },
   {
-    name: 'Page E',
+    name: 'Sex',
     uv: 1890,
-    pv: 4800,
+    pv: 200,
     amt: 2181,
   },
   {
-    name: 'Page F',
+    name: 'Sab',
     uv: 2390,
-    pv: 3800,
+    pv: 30,
     amt: 2500,
   },
   {
-    name: 'Page G',
+    name: 'Dom',
     uv: 3490,
-    pv: 4300,
+    pv: 40,
     amt: 2100,
   },
 ];
@@ -88,6 +88,7 @@ export default class Example2 extends PureComponent {
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
+        layout='horizontal'
           width={500}
           height={300}
           data={data}

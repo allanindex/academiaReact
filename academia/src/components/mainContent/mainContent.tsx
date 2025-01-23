@@ -161,44 +161,44 @@ function MainContent() {
 
                 <Flex className="chart mediumChart" gridColumn={'span 2'}>
                     <Box className="chartHeader">
-                        <Text fontSize={'1.2rem'} ml={'1.5vw'}>Alunos por plano</Text> 
+                        <Text fontSize={'1.2rem'} ml={'1.5vw'}>Alunos por plano</Text>
                     </Box>
                     <Flex alignItems={'center'} h={'25vh'} justifyContent={'space-between'} p={'0 2vw'}>
                         <Box className="planOptions"
                             css={{
-                              "& > div > div > span":{
-                                w:'1vw',
-                                h: '1vw',
-                                borderRadius: '50%',
-                               
-                              },
-                              "& > div > div":{
-                                alignItems: 'center',
-                                gap: '10px',
-                                color: 'rgb(193, 193, 193)'
-                              },
+                                "& > div > div > span": {
+                                    w: '1vw',
+                                    h: '1vw',
+                                    borderRadius: '50%',
+
+                                },
+                                "& > div > div": {
+                                    alignItems: 'center',
+                                    gap: '10px',
+                                    color: 'rgb(193, 193, 193)'
+                                },
                             }}
                         >
-                           
-                                <Flex flexDir={'column'} gap={'10px'}>
-                                    <Flex><Box as={'span'}  bg={'#042042'}></Box>Premium</Flex>
-                                    <Flex><Box as={'span'}  bg={'#1e8fd6'}></Box>Platinum</Flex>
-                                    <Flex><Box as={'span'}  bg={'#ffffff'}></Box>Basic</Flex>
-                                </Flex>
-                            
-                              
+
+                            <Flex flexDir={'column'} gap={'10px'}>
+                                <Flex><Box as={'span'} bg={'#042042'}></Box>Premium</Flex>
+                                <Flex><Box as={'span'} bg={'#1e8fd6'}></Box>Platinum</Flex>
+                                <Flex><Box as={'span'} bg={'#ffffff'}></Box>Basic</Flex>
+                            </Flex>
+
+
                         </Box>
                         <Box w={'50%'} h={'100%'} display={'block'}
                             css={{
-                                "& > div":{
-                                   top: '-6vw',
-                                   left: '-10vw'
-                        
+                                "& > div": {
+                                    top: '-6vw',
+                                    left: '-10vw'
+
                                 }
                             }}
                         >
-                                <Example />
-                            </Box>
+                            <Example />
+                        </Box>
                     </Flex>
                 </Flex>
                 <Flex gridColumn={'span 3'} className="chart bigChart" >
@@ -211,12 +211,9 @@ function MainContent() {
                     </Box>
                 </Flex>
                 <Flex gridColumn={'span 3'} className="chart bigChart" >
-                    <Box className="chartHeader" >
-                        <Text fontSize={'1.2rem'} ml={'1.5vw'}>Alunos matriculados</Text>
-                        <Flex className="filters"></Flex>
-                    </Box>
+                    <Text fontSize={'1.2rem'} ml={'1.5vw'}>Alunos</Text>
                     <Box w={'100%'} h={'80%'}>
-                        <Example2 />
+                        
                     </Box>
                 </Flex>
 
@@ -224,10 +221,14 @@ function MainContent() {
                     gridColumn={'span 2'}
                     className="chart mediumChart"
                 >
-
+                    <Box className="chartHeader" >
+                        <Text fontSize={'1.2rem'} ml={'1.5vw'}>Capacidade máxima</Text>
+                        <Flex className="filters"></Flex>
+                    </Box>
+                    <Box w={'100%'} h={'80%'}>
+                        <Example2 />
+                    </Box>
                 </Flex>
-
-
             </Box>
 
         </Box>
