@@ -163,7 +163,13 @@ function MainContent() {
                     <Box className="chartHeader">
                         <Text fontSize={'1.2rem'} ml={'1.5vw'}>Alunos por plano</Text>
                     </Box>
-                    <Flex alignItems={'center'} h={'25vh'} justifyContent={'space-between'} p={'0 2vw'}>
+                    <Flex alignItems={'center'}  flexDir={'row'} justifyContent={'space-between'} p={'0  0 0 2vw'} w={'100%'} h={'100%'}
+                        css={{
+                            "& > svg":{
+                                display: 'none'
+                            }
+                        }}
+                    >
                         <Box className="planOptions"
                             css={{
                                 "& > div > div > span": {
@@ -185,20 +191,8 @@ function MainContent() {
                                 <Flex><Box as={'span'} bg={'#1e8fd6'}></Box>Platinum</Flex>
                                 <Flex><Box as={'span'} bg={'#ffffff'}></Box>Basic</Flex>
                             </Flex>
-
-
                         </Box>
-                        <Box w={'50%'} h={'100%'} display={'block'}
-                            css={{
-                                "& > div": {
-                                    top: '-6vw',
-                                    left: '-10vw'
-
-                                }
-                            }}
-                        >
-                            <Example />
-                        </Box>
+                        <Example />
                     </Flex>
                 </Flex>
                 <Flex gridColumn={'span 3'} className="chart bigChart" >
