@@ -5,30 +5,37 @@ import { RxPerson } from "react-icons/rx";
 import { GoGraph } from "react-icons/go";
 import { IoSettingsOutline } from "react-icons/io5";
 import { Text, Separator  } from "@chakra-ui/react";
-
+import { RiMenuFill } from "react-icons/ri";
+import { useState } from "react";
 const Sidebar = () => {
 const logo =  '/img/logo-dark.png'
+const [isExpanded, setExpanded] = useState(false);
   return (
-      <Box className={'sidebar'} p={'20px'} w={'15vw'}>
-        <Flex w={'100%'} justifyContent={'flex-start'}  h={'5vh'} alignItems={'center'} gap={'10px'}>  
-            <Box h={'4vh'} w={'4vh'} bg={'#042042'} borderRadius={'50%'} p={'5px'} display={'flex'} alignItems={'center'}>
-            <img src={logo} alt="" />
-            </Box>
-            <Text>BodyFit</Text>
+      <Box className={'sidebar'} p={isExpanded?'0 5px':'0 0.5vw'} w={isExpanded?'15%': '5%'}  bg={'#101010'}
+      onMouseEnter={()=>{ 
+        setExpanded(true);
+      }
+      }
+      onMouseLeave={()=>{
+        setExpanded(false);
+      }}
+      >
+        <Flex w={'100%'}  h={'9vh'} flexDir={'row'} alignItems={'center'} justifyContent={'space-between'}>  
+            <Flex justifyContent={isExpanded ? 'flex-start' : 'center'} alignItems={'center'} gap={'10px'} w={'100%'}>
+              <Flex h={'4.5vh'} w={'4.5vh'} bg={'rgb(255, 255, 255)'} borderRadius={'50%'} p={'5px'} alignItems={'center'}>
+              <img src={logo} alt="" />
+              </Flex>
+              <Text fontSize={'1.3rem'}>{isExpanded ? 'BodyFit': ''}</Text>
+            </Flex>
+         
         </Flex>
-        <Box
-          height={'6.5vh'}
-          borderRadius={'10px'}
-          padding={'10px'}
-          bg={'rgb(54, 54, 54)'}
-          m={'2vh 0'}
-        >Profile</Box>
+    
         <Separator mb={'2vh'} />
-        <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'15px'} 
+        <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'20px'} 
         css={{
           "& > div":{
             p:'10px',
-            borderRadius: '10px',
+            borderRadius: '5px',
             color: 'rgb(175, 175, 175)'
           },
           "& > div:hover":{
@@ -37,10 +44,10 @@ const logo =  '/img/logo-dark.png'
           }
         }}
         >
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><VscHome size={'25px'} /> Home</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><RxPerson size={'25px'} />Alunos</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><GoGraph size={'25px'} />Financeiro</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><IoSettingsOutline size={'25px'} /> Configurações</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><VscHome size={'25px'} /> {isExpanded ? 'Home':''}</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><RxPerson size={'25px'} />{isExpanded ? 'Alunos':''}</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><GoGraph size={'25px'} />{isExpanded ? 'Financeiro':''}</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><IoSettingsOutline size={'25px'} /> {isExpanded ? 'Configurações' : ''}</Flex>
         </Flex>
       </Box>
   );

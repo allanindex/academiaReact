@@ -1,131 +1,43 @@
 import { Box, Text, Flex, Color } from "@chakra-ui/react";
-import { VscGraphLine } from "react-icons/vsc";
-import { GoPersonFill } from "react-icons/go";
-import { FaCalendarTimes } from "react-icons/fa";
-import { BsPersonCheck } from "react-icons/bs";
+
 import MyLineChart from "../charts/lineChart";
-import Example2 from "../charts/barChart";
 import Example from "../charts/pieChart";
-import { IoPersonOutline } from "react-icons/io5";
-import { LuCalendarDays } from "react-icons/lu";
+import TopCard from "../card/TopCard";
+
 
 function MainContent() {
     return (
-        <Box bg={'rgb(18, 21, 27)'} h={'97vh'} color={'black'} p={'2vh 0.8vw'} w={'84vw'} borderRadius={'15px'}>
-            <Text color={'white'} fontSize={'1.5rem'} mb={'10px'}>Overview</Text>
+        <Box bg={'#000000'} color={'black'} p={'2vh 1.2vw'} w={'100%'} >
             <Flex
                 css={{
                     "& > div.card": {
-                        width: '20%',
-                        height: '16vh',
-                        borderRadius: '15px',
+                        width: '25%',
+
+                        minH: '18vh',
+                        borderRadius: '10px',
                         color: 'rgb(209, 209, 209)',
-                        padding: '12px',
+                        padding: '1vw',
                         fontSize: '1.2rem',
-                        bgGradient: "linear-gradient(45deg, #090A0D, #042042)",
+                       bg:'#101010',
                         boxShadow: '0px 3px 10px -3px black',
                         gap: '0.7vh'
                     },
-                    "& > div.cardImpar": {
-                        bgGradient: "linear-gradient(45deg, #090A0D, #1e8fd6)",
-                    },
-                    "& > div.card > div.cardIcon": {
-                        borderRadius: '50%',
-                        border: '1px solid white',
-                        w: '2.1vw',
-                        h: '2.1vw',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: "center",
-
-                    },
-                    "& > div.card > div.cardValue": {
-                        alignItems: 'center',
-                        gap: '5px',
-                        color: 'white'
-                    },
-                    "& > div.card > div.cardValue > div.cardFlag": {
-                        alignItems: 'center',
-                        bg: 'rgb(0, 100, 0)',
-                        borderRadius: '10px',
-                        fontSize: '0.8rem',
-                        w: '2.8vw',
-                        h: '2.2h',
-                        justifyContent: 'center'
-
-                    },
+                    "& > div.card > div.card-header":{
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        fontSize: '1rem'
+                    }
+            
                 }}
-                gap={'0.8vw'}
                 className="cards"
+                gap={'1.2vw'}
+                w={'100%'}
             >
-                <Box display={'flex'} className="card cardImpar" flexDirection={'column'}
-                >
-                    <Box className="cardIcon">
-                        <VscGraphLine size={'20px'} />
-                    </Box>
-                    <Text>faturamento atual</Text>
-                    <Flex className="cardValue">
-                        <Text>R$ 183.820</Text>
-                        <Flex className="cardFlag">
-                            +20%
-                        </Flex>
-                    </Flex>
-                </Box>
-                <Box display={'flex'} flexDir={'column'} className="card">
-                    <Box className="cardIcon">
-                        <IoPersonOutline size={'20px'} />
-                    </Box>
-                    <Text>
-                        Total de alunos
-                    </Text>
-
-                    <Flex className="cardValue">
-                        <Text>214</Text>
-                        <Flex className="cardFlag" >
-                            +40%
-                        </Flex>
-                    </Flex>
-
-                </Box>
-                <Box display={'flex'} flexDir={'column'} className="card cardImpar">
-
-
-                    <Box className="cardIcon">
-                        <LuCalendarDays size={'20px'} />
-                    </Box>
-                    <Text >
-                        Clientes irregulares
-                    </Text>
-
-
-                    <Flex className="cardValue">
-                        <Text>60</Text>
-                        <Flex className="cardFlag">
-                            -12%
-                        </Flex>
-                    </Flex>
-
-                </Box>
-                <Box display={'flex'} flexDir={'column'} className="card" >
-
-
-                    <Box className="cardIcon">
-                        <BsPersonCheck size={'20px'} />
-                    </Box>
-                    <Text>
-                        Frequência mensal
-                    </Text>
-
-
-                    <Flex className="cardValue">
-                        <Text>30.000</Text>
-                        <Flex className="cardFlag">
-                            +35%
-                        </Flex>
-                    </Flex>
-
-                </Box>
-
+                <TopCard className="card" cardTitle='Faturamento'  cardValue='R$200.000'/>
+                <TopCard className="card" cardTitle='Novos alunos'  cardValue='214'/>
+                <TopCard className="card" cardTitle='Cancelamentos'  cardValue='8'/>
+                <TopCard className="card" cardTitle='Frequência média'  cardValue='10.000'/>  
+                   
             </Flex>
 
             <Box
@@ -133,9 +45,8 @@ function MainContent() {
                 css={
                     {
                         "& > div.chart": {
-                            bg: '#090A0D',
-                            borderRadius: '15px',
-                            padding: '10px',
+                            bg: '#101010',
+                            borderRadius: '10px',
                             height: '34vh',
                             color: 'white',
                             p: '25px',
@@ -154,46 +65,22 @@ function MainContent() {
                     }
                 }
                 display={'grid'}
-                gap={'0.6vw'}
+                gap={'1.2vw'}
                 gridTemplateColumns={'repeat(5, 1fr)'}
-                mt={'1vw'}
+                mt={'1.2vw'}
+            
             >
 
                 <Flex className="chart mediumChart" gridColumn={'span 2'}>
                     <Box className="chartHeader">
-                        <Text fontSize={'1.2rem'} ml={'1.5vw'}>Alunos por plano</Text>
-                    </Box>
-                    <Flex alignItems={'center'}  flexDir={'row'} justifyContent={'space-between'} p={'0  0 0 2vw'} w={'100%'} h={'100%'}
-                        css={{
-                            "& > svg":{
-                                display: 'none'
-                            }
-                        }}
-                    >
-                        <Box className="planOptions"
-                            css={{
-                                "& > div > div > span": {
-                                    w: '1vw',
-                                    h: '1vw',
-                                    borderRadius: '50%',
+                        <Text fontSize={'1.2rem'} ml={'1.5vw'}>Retenção por plano</Text>
+                        <Box w={'100%'} h={'100%'}>
+                          
 
-                                },
-                                "& > div > div": {
-                                    alignItems: 'center',
-                                    gap: '10px',
-                                    color: 'rgb(193, 193, 193)'
-                                },
-                            }}
-                        >
-
-                            <Flex flexDir={'column'} gap={'10px'}>
-                                <Flex><Box as={'span'} bg={'#042042'}></Box>Premium</Flex>
-                                <Flex><Box as={'span'} bg={'#1e8fd6'}></Box>Platinum</Flex>
-                                <Flex><Box as={'span'} bg={'#ffffff'}></Box>Basic</Flex>
-                            </Flex>
                         </Box>
-                        <Example />
-                    </Flex>
+
+                    </Box>
+
                 </Flex>
                 <Flex gridColumn={'span 3'} className="chart bigChart" >
                     <Box className="chartHeader" >
@@ -207,7 +94,7 @@ function MainContent() {
                 <Flex gridColumn={'span 3'} className="chart bigChart" >
                     <Text fontSize={'1.2rem'} ml={'1.5vw'}>Alunos</Text>
                     <Box w={'100%'} h={'80%'}>
-                        
+
                     </Box>
                 </Flex>
 
@@ -220,7 +107,7 @@ function MainContent() {
                         <Flex className="filters"></Flex>
                     </Box>
                     <Box w={'100%'} h={'80%'}>
-                        <Example2 />
+                       
                     </Box>
                 </Flex>
             </Box>

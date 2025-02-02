@@ -22,7 +22,7 @@ const MyLineChart = () => (
     <XAxis dataKey="name" stroke='#bdbdbd' axisLine={false} tickLine={false} />
     <YAxis axisLine={false} tickLine={false}  stroke={'#bdbdbd'}/>
     <Tooltip />
-    <CartesianGrid horizontal={true}  vertical={false} strokeDasharray="3 3" stroke='rgba(245, 245, 245, 0.33)'/>
+    <CartesianGrid horizontal={false}  vertical={false} strokeDasharray="3 3" stroke='rgba(245, 245, 245, 0.33)'/>
     <Line type="monotone" dataKey="uv" stroke=" #063B7C" strokeWidth={'3px'} />
   </LineChart>
   </ResponsiveContainer>
