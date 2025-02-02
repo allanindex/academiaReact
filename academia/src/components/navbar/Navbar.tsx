@@ -1,11 +1,13 @@
 import { Box, Text, Flex} from "@chakra-ui/react";
 import { IoIosArrowDown } from "react-icons/io";
+import { useColorMode, useColorModeValue, ColorModeButton } from "@/components/ui/color-mode";
 const avatar = '/img/avatar.png'
 function Navbar(){
     return(
-        <Flex w={'100%'} bg={" #101010"} justifyContent={'space-between'} h={'9vh'}>
-            <Flex className="menu-title" h={'100%'} alignItems={'center'} fontSize={'1.4rem'} p={'0 1.2vw'}>
+        <Flex w={'100%'} bg={useColorModeValue('#101010' , 'white')} justifyContent={'space-between'} h={'9vh'} color={useColorModeValue('white', 'black')} borderBottom={'1px solid #838383'}>
+            <Flex className="menu-title" h={'100%'} alignItems={'center'} fontSize={'1.4rem'} p={'0 1.2vw'} gap={'10px'}>
                 <Text>Dashboard</Text>
+                <ColorModeButton color={useColorModeValue('white', 'black')}/>
             </Flex>
             <Flex className="profile" w={'15%'} h={'100%'} alignItems={'center'} justifyContent={'center'} p={'0 1vw'} gap={'10px'}>
                 <Box className="avatar" w={'20%'}>

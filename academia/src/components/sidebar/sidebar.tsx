@@ -6,12 +6,14 @@ import { GoGraph } from "react-icons/go";
 import { IoSettingsOutline } from "react-icons/io5";
 import { Text, Separator  } from "@chakra-ui/react";
 import { RiMenuFill } from "react-icons/ri";
+import { useColorMode, useColorModeValue, ColorModeButton } from "@/components/ui/color-mode";
 import { useState } from "react";
 const Sidebar = () => {
 const logo =  '/img/logo-dark.png'
 const [isExpanded, setExpanded] = useState(false);
   return (
-      <Box className={'sidebar'} p={isExpanded?'0 5px':'0 0.5vw'} w={isExpanded?'15%': '5%'}  bg={'#101010'}
+      <Box className={'sidebar'} p={isExpanded?'0 5px':'0 0.5vw'} w={isExpanded?'15%': '5%'}  bg={useColorModeValue('#101010', 'white')}
+      borderRight={'1px solid #838383'}
       onMouseEnter={()=>{ 
         setExpanded(true);
       }
@@ -21,22 +23,20 @@ const [isExpanded, setExpanded] = useState(false);
       }}
       >
         <Flex w={'100%'}  h={'9vh'} flexDir={'row'} alignItems={'center'} justifyContent={'space-between'}>  
-            <Flex justifyContent={isExpanded ? 'flex-start' : 'center'} alignItems={'center'} gap={'10px'} w={'100%'}>
-              <Flex h={'4.5vh'} w={'4.5vh'} bg={'rgb(255, 255, 255)'} borderRadius={'50%'} p={'5px'} alignItems={'center'}>
-              <img src={logo} alt="" />
+            <Flex justifyContent={isExpanded ? 'flex-start' : 'center'} alignItems={'center'} gap={'10px'} w={'100%'} color={useColorModeValue('white', 'black')}>
+              <Flex h={'4.5vh'} w={'4.5vh'} bg={useColorModeValue('white', 'rgb(26, 106, 255)')} borderRadius={'50%'} p={'5px'} alignItems={'center'}>
+             
               </Flex>
               <Text fontSize={'1.3rem'}>{isExpanded ? 'BodyFit': ''}</Text>
             </Flex>
          
         </Flex>
-    
-        <Separator mb={'2vh'} />
         <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'20px'} 
         css={{
           "& > div":{
             p:'10px',
             borderRadius: '5px',
-            color: 'rgb(175, 175, 175)'
+            color: useColorModeValue('white', 'black')
           },
           "& > div:hover":{
             color: 'white',
@@ -49,6 +49,8 @@ const [isExpanded, setExpanded] = useState(false);
           <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><GoGraph size={'25px'} />{isExpanded ? 'Financeiro':''}</Flex>
           <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><IoSettingsOutline size={'25px'} /> {isExpanded ? 'Configurações' : ''}</Flex>
         </Flex>
+
+
       </Box>
   );
 };

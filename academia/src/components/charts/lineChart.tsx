@@ -1,6 +1,6 @@
 import React from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-
+import { useColorMode, useColorModeValue, ColorModeButton } from "@/components/ui/color-mode";
 const data = [
     { name: 'Jan', uv: 400, pv: 2400, amt: 2400 },
     { name: 'Fev', uv: 300, pv: 2200, amt: 2100 },
@@ -19,10 +19,10 @@ const data = [
 const MyLineChart = () => (
     <ResponsiveContainer>
   <LineChart data={data}>
-    <XAxis dataKey="name" stroke='#bdbdbd' axisLine={false} tickLine={false} />
-    <YAxis axisLine={false} tickLine={false}  stroke={'#bdbdbd'}/>
+    <XAxis dataKey="name" stroke={useColorModeValue('#bdbdbd', "black")} axisLine={false} tickLine={false} />
+    <YAxis axisLine={false} tickLine={false}  stroke={useColorModeValue('#bdbdbd', "black")}/>
     <Tooltip />
-    <CartesianGrid horizontal={false}  vertical={false} strokeDasharray="3 3" stroke='rgba(245, 245, 245, 0.33)'/>
+    <CartesianGrid horizontal={false}  vertical={false} strokeDasharray="3 3" stroke={useColorModeValue('#bdbdbd', "black")}/>
     <Line type="monotone" dataKey="uv" stroke=" #063B7C" strokeWidth={'3px'} />
   </LineChart>
   </ResponsiveContainer>

@@ -3,11 +3,11 @@ import { Box, Text, Flex, Color } from "@chakra-ui/react";
 import MyLineChart from "../charts/lineChart";
 import Example from "../charts/pieChart";
 import TopCard from "../card/TopCard";
-
+import { useColorMode, useColorModeValue, ColorModeButton } from "@/components/ui/color-mode";
 
 function MainContent() {
     return (
-        <Box bg={'#000000'} color={'black'} p={'2vh 1.2vw'} w={'100%'} >
+        <Box bg={useColorModeValue('#000000', 'rgb(224, 224, 224)')} color={'black'} p={'2vh 1.2vw'} w={'100%'} >
             <Flex
                 css={{
                     "& > div.card": {
@@ -15,11 +15,11 @@ function MainContent() {
 
                         minH: '18vh',
                         borderRadius: '10px',
-                        color: 'rgb(209, 209, 209)',
+                        color: useColorModeValue('#d1d1d1', 'black'),
                         padding: '1vw',
                         fontSize: '1.2rem',
-                       bg:'#101010',
-                        boxShadow: '0px 3px 10px -3px black',
+                       bg: useColorModeValue('#101010', 'white'),
+                        border: '1px solid #838383',
                         gap: '0.7vh'
                     },
                     "& > div.card > div.card-header":{
@@ -45,12 +45,13 @@ function MainContent() {
                 css={
                     {
                         "& > div.chart": {
-                            bg: '#101010',
+                            bg: useColorModeValue('#101010', 'white'),
                             borderRadius: '10px',
                             height: '34vh',
-                            color: 'white',
+                            color: useColorModeValue('white', 'black'),
                             p: '25px',
-                            pl: '0'
+                            pl: '0',
+                            border: '1px solid #838383'
 
                         },
                         "& > div.bigChart": {
