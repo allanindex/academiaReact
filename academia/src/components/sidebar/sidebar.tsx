@@ -12,8 +12,8 @@ const Sidebar = () => {
 const logo =  '/img/logo-dark.png'
 const [isExpanded, setExpanded] = useState(false);
   return (
-      <Box className={'sidebar'} p={isExpanded?'0 5px':'0 0.5vw'} w={isExpanded?'15%': '5%'}  bg={useColorModeValue('#101010', 'white')}
-      borderRight={'1px solid #838383'}
+      <Box className={'sidebar'} p={isExpanded?'0 5px':'0 0.5vw'} w={isExpanded?'15%': '5%'}  bg={useColorModeValue('#1A1C20', 'white')}
+      minH={'100vh'}
       onMouseEnter={()=>{ 
         setExpanded(true);
       }
@@ -40,7 +40,7 @@ const [isExpanded, setExpanded] = useState(false);
           },
           "& > div:hover":{
             color: 'white',
-            bg: 'rgb(4, 32, 66)'
+            bg: '#138A36'
           }
         }}
         >

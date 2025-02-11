@@ -1,13 +1,14 @@
 import { Box, Text, Flex, Color } from "@chakra-ui/react";
-
+//import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import MyLineChart from "../charts/lineChart";
-import Example from "../charts/pieChart";
+import Example from "../charts/nutrientsChart";
 import TopCard from "../card/TopCard";
 import { useColorMode, useColorModeValue, ColorModeButton } from "@/components/ui/color-mode";
-
+import Alunos from "@/alunos/Alunos";
 function MainContent() {
     return (
-        <Box bg={useColorModeValue('#000000', 'rgb(224, 224, 224)')} color={'black'} p={'2vh 1.2vw'} w={'100%'} >
+        
+        <Box  bg={useColorModeValue('#131517', ' #e0e0e0')} color={'black'} p={'2vh 1.2vw'} w={'100%'} >
             <Flex
                 css={{
                     "& > div.card": {
@@ -18,8 +19,8 @@ function MainContent() {
                         color: useColorModeValue('#d1d1d1', 'black'),
                         padding: '1vw',
                         fontSize: '1.2rem',
-                       bg: useColorModeValue('#101010', 'white'),
-                        border: '1px solid #838383',
+                        bg: useColorModeValue('#1A1C20' , 'white'),
+                        //border: '1px solid #838383',
                         gap: '0.7vh'
                     },
                     "& > div.card > div.card-header":{
@@ -45,13 +46,13 @@ function MainContent() {
                 css={
                     {
                         "& > div.chart": {
-                            bg: useColorModeValue('#101010', 'white'),
+                            bg: useColorModeValue('#1A1C20' , 'white'),
                             borderRadius: '10px',
                             height: '34vh',
                             color: useColorModeValue('white', 'black'),
                             p: '25px',
                             pl: '0',
-                            border: '1px solid #838383'
+                            //border: '1px solid #838383'
 
                         },
                         "& > div.bigChart": {
@@ -114,6 +115,8 @@ function MainContent() {
             </Box>
 
         </Box>
+   
+
     )
 }
 export default MainContent;
