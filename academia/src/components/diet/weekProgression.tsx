@@ -10,7 +10,6 @@ function WeekProgression() {
         const dateNow = new Date();
         const dayNow = dateNow.getDay();
         setSelectedDay(diasDaSemana[dayNow]);
-        console.log("Dia da semana:", diasDaSemana[dayNow]);
     }, [])
     
     
@@ -21,7 +20,7 @@ function WeekProgression() {
             justifyContent={'space-between'}
             h={'5vh'}
             color={useColorModeValue('white', 'black')}
-            bg={useColorModeValue('#1A1C20', 'transparent')}
+            bg={useColorModeValue(' #1A1C20', 'transparent')}
             borderRadius={'5px'}
             alignItems={'center'}
         
@@ -37,10 +36,11 @@ function WeekProgression() {
                  borderRadius: '5px',
                  transition: "background-color 0.3s ease",
                  cursor: 'pointer',
-                 color: 'white',
+                 color: useColorModeValue('white', 'black'),
                 },
                 "& > div.weekDay:hover":{
-                    bg: useColorModeValue(' #074685', '#138A36'),
+                    bg: ' #074685',
+                    color: 'white'
                     
                 }
             }}
@@ -51,8 +51,7 @@ function WeekProgression() {
           onClick={() => setSelectedDay(dia)} 
           border={selectedDay === dia ? "1px solid #074685" : "1px solid rgb(90, 90, 90)"}
           className="weekDay"
-          bg={selectedDay === dia ? '#074685' : '#1A1C20'}
-          color={selectedDay === dia ? 'white' : 'black'}
+          bg={selectedDay === dia ? ' #074685' : useColorModeValue(' #1A1C20', 'rgb(255, 255, 255)')}
           _hover={{ bg: selectedDay === dia ? '#138A36' : 'white' }}
         >
           {dia}

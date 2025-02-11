@@ -13,7 +13,7 @@ const lunch = "/img/lunch.jpg";
 const snack = "/img/snack.jpg";
 function DietContent() {
     return (
-        <Box h={'91vh'} width={'full'} bg={useColorModeValue(' #131517', ' #e0e0e0')}>
+        <Box h={'91vh'} width={'full'} bg={useColorModeValue(' #131517', '#c9c9c9')}>
             <WeekProgression />
             <Flex 
             justify={'space-between'}
@@ -50,7 +50,7 @@ function DietContent() {
                                 <Text>Café da manhã</Text>
                             </Card.Body>
                             <Card.Footer pl={'1vw'}>
-                                <Button variant="solid" bg='#074685'>Detalhes</Button>
+                                <Button variant="solid" bg='#074685' color='white'>Detalhes</Button>
                             </Card.Footer>
                         </Card.Root>
                         <Card.Root overflow="hidden">
@@ -62,7 +62,7 @@ function DietContent() {
                                 <Text>Lanches</Text>
                             </Card.Body>
                             <Card.Footer pl={'1vw'}>
-                                <Button variant="solid" bg='#074685'>Detalhes</Button>
+                                <Button variant="solid" bg='#074685' color='white'>Detalhes</Button>
                             </Card.Footer>
                         </Card.Root>
                         <Card.Root  overflow="hidden">
@@ -74,7 +74,7 @@ function DietContent() {
                                 <Text>Almoço</Text>
                             </Card.Body>
                             <Card.Footer pl={'1vw'}>
-                                <Button variant="solid" bg='#074685'>Detalhes</Button>
+                                <Button variant="solid" bg='#074685' color='white'>Detalhes</Button>
                             </Card.Footer>
                         </Card.Root>
                         <Card.Root  overflow="hidden">
@@ -86,7 +86,7 @@ function DietContent() {
                                 <Text>Jantar</Text>
                             </Card.Body>
                             <Card.Footer pl={'1vw'}>
-                                <Button variant="solid" bg='#074685'>Detalhes</Button>
+                                <Button variant="solid" bg='#074685' color='white'>Detalhes</Button>
                             </Card.Footer>
                         </Card.Root>
                     </Flex>
@@ -107,7 +107,7 @@ function DietContent() {
                               bg={useColorModeValue('#1A1C20', ' white')}
                               p={'1vw 0.8vw'}
                               borderRadius={'5px'}
-                            color={'white'}
+                            color={useColorModeValue('white', 'black')}
                             css={{
                                 "& > div": {
                                     gap: '0.8vw'
