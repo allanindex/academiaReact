@@ -1,9 +1,9 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { useColorModeValue } from '../ui/color-mode';
 const data = [
-  { name: 'Carboidratos', value: 70 },
-  { name: 'Proteínas', value: 55 },
-  { name: 'Gorduras', value: 90 },
+  { name: 'Carboidratos', consumido: 70 },
+  { name: 'Proteínas', consumido: 55 },
+  { name: 'Gorduras', consumido: 90 },
 ];
 const maxValue = 100; 
 const CustomBackgroundBar = (props: any) => {
@@ -22,7 +22,7 @@ export default function Nutrients() {
         <YAxis type="category" dataKey="name" tick={{fill:useColorModeValue('white', 'black')}}/>
         <Tooltip />
         <Bar
-          dataKey="value"
+          dataKey="consumido"
           fill=" #074685"
           barSize={30}
           background={<CustomBackgroundBar />}

@@ -12,7 +12,7 @@ const Sidebar = () => {
 const logo =  '/img/logo-dark.png'
 const [isExpanded, setExpanded] = useState(false);
   return (
-      <Box className={'sidebar'} p={isExpanded?'0 5px':'0 0.5vw'} w={isExpanded?'15%': '5%'}  bg={useColorModeValue('#1A1C20', 'white')}
+      <Box className={'sidebar'} p={isExpanded?'0 5px':'0 0.5vw'} w={isExpanded?'15%': '4%'}  bg={useColorModeValue('#1A1C20', 'white')}
       minH={'100vh'}
       onMouseEnter={()=>{ 
         setExpanded(true);
@@ -32,6 +32,7 @@ const [isExpanded, setExpanded] = useState(false);
          
         </Flex>
         <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'20px'} 
+        mt={'8vh'}
         css={{
           "& > div":{
             p:'10px',
