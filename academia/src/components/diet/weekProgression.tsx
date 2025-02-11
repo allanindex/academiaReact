@@ -19,7 +19,6 @@ function WeekProgression() {
             w={'full'}
             justifyContent={'space-between'}
             h={'5vh'}
-            color={useColorModeValue('white', 'black')}
             bg={useColorModeValue(' #1A1C20', 'transparent')}
             borderRadius={'5px'}
             alignItems={'center'}
@@ -36,7 +35,7 @@ function WeekProgression() {
                  borderRadius: '5px',
                  transition: "background-color 0.3s ease",
                  cursor: 'pointer',
-                 color: useColorModeValue('white', 'black'),
+    
                 },
                 "& > div.weekDay:hover":{
                     bg: ' #074685',
@@ -51,6 +50,7 @@ function WeekProgression() {
           onClick={() => setSelectedDay(dia)} 
           border={selectedDay === dia ? "1px solid #074685" : "1px solid rgb(90, 90, 90)"}
           className="weekDay"
+          color={selectedDay === dia ? 'white' : useColorModeValue('white', 'black')}
           bg={selectedDay === dia ? ' #074685' : useColorModeValue(' #1A1C20', 'rgb(255, 255, 255)')}
           _hover={{ bg: selectedDay === dia ? '#138A36' : 'white' }}
         >

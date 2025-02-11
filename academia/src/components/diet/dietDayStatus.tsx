@@ -11,7 +11,7 @@ function DietDayStatus() {
             <Box className="snacks-per-day">
 
             </Box>
-            <Flex className="nutrition-graph" w={expandedNutritionGraph ? '31vw' : '4vw'} bg={'#1A1C20'} color={useColorModeValue('white', 'black')} flexDir={'colum'} justifyContent={'space-between'}
+            <Flex className="nutrition-graph" w={expandedNutritionGraph ? '31vw' : '4vw'} bg={useColorModeValue(' #1A1C20', 'white')} color={useColorModeValue('white', 'black')} flexDir={'colum'} justifyContent={'space-between'}
                 onMouseEnter={() => {
                     setExpandedNutritionGraph(true);
                 }
