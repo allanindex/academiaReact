@@ -12,7 +12,7 @@ const Sidebar = () => {
 const logo =  '/img/logo-dark.png'
 const [isExpanded, setExpanded] = useState(false);
   return (
-      <Box className={'sidebar'} p={isExpanded?'0 5px':'0 0.5vw'} w={isExpanded?'15%': '4%'}  bg={useColorModeValue('#1A1C20', 'white')}
+      <Box className={'sidebar'} p={isExpanded ? '0 5px' : '0 0.5vw'} w={isExpanded ? '15%' : '4%'}  bg={useColorModeValue('#1A1C20', 'white')}
       minH={'100vh'}
       onMouseEnter={()=>{ 
         setExpanded(true);
@@ -31,8 +31,8 @@ const [isExpanded, setExpanded] = useState(false);
             </Flex>
          
         </Flex>
-        <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'20px'} 
-        mt={'8vh'}
+        <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'5px'} 
+       
         css={{
           "& > div":{
             p:'10px',
@@ -45,10 +45,10 @@ const [isExpanded, setExpanded] = useState(false);
           }
         }}
         >
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><VscHome size={'25px'} /> {isExpanded ? 'Home':''}</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><RxPerson size={'25px'} />{isExpanded ? 'Alunos':''}</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><GoGraph size={'25px'} />{isExpanded ? 'Financeiro':''}</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><IoSettingsOutline size={'25px'} /> {isExpanded ? 'Configurações' : ''}</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><VscHome size={'20px'} /> {isExpanded ? 'Home':''}</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><RxPerson size={'20px'} />{isExpanded ? 'Alunos':''}</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><GoGraph size={'20px'} />{isExpanded ? 'Financeiro':''}</Flex>
+          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><IoSettingsOutline size={'20px'} /> {isExpanded ? 'Configurações' : ''}</Flex>
         </Flex>
 
 

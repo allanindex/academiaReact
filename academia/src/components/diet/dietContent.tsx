@@ -6,7 +6,7 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { HiOutlineBeaker } from "react-icons/hi";
 import { BsClipboardData } from "react-icons/bs";
 import WeekProgression from "./weekProgression";
-import DietDayStatus from "./dietDayStatus";
+import DietDayStatus from "./drawerContent";
 const breakfast = "/img/breakfast.jpg";
 const dinner = "/img/dinner.jpg";
 const lunch = "/img/lunch.jpg";
@@ -14,7 +14,7 @@ const snack = "/img/snack.jpg";
 function DietContent() {
     return (
         <Box h={'91vh'} width={'full'} bg={useColorModeValue(' #131517', '#c9c9c9')}>
-            <WeekProgression />
+            {/* <WeekProgression /> */}
             <Flex 
             justify={'space-between'}
             >
@@ -50,7 +50,7 @@ function DietContent() {
                                 <Text>Café da manhã</Text>
                             </Card.Body>
                             <Card.Footer pl={'1vw'}>
-                                <Button variant="solid" bg='#074685' color='white'>Detalhes</Button>
+                                <DietDayStatus />
                             </Card.Footer>
                         </Card.Root>
                         <Card.Root overflow="hidden">
@@ -62,7 +62,7 @@ function DietContent() {
                                 <Text>Lanches</Text>
                             </Card.Body>
                             <Card.Footer pl={'1vw'}>
-                                <Button variant="solid" bg='#074685' color='white'>Detalhes</Button>
+                            <DietDayStatus />
                             </Card.Footer>
                         </Card.Root>
                         <Card.Root  overflow="hidden">
@@ -74,7 +74,7 @@ function DietContent() {
                                 <Text>Almoço</Text>
                             </Card.Body>
                             <Card.Footer pl={'1vw'}>
-                                <Button variant="solid" bg='#074685' color='white'>Detalhes</Button>
+                            <DietDayStatus />
                             </Card.Footer>
                         </Card.Root>
                         <Card.Root  overflow="hidden">
@@ -86,7 +86,7 @@ function DietContent() {
                                 <Text>Jantar</Text>
                             </Card.Body>
                             <Card.Footer pl={'1vw'}>
-                                <Button variant="solid" bg='#074685' color='white'>Detalhes</Button>
+                            <DietDayStatus />
                             </Card.Footer>
                         </Card.Root>
                     </Flex>
@@ -133,7 +133,7 @@ function DietContent() {
                         </Box>
                     </Flex>
                 </Flex>
-                <DietDayStatus />
+                
             </Flex>
         </Box>
     )

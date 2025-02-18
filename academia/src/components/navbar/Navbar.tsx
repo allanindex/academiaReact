@@ -4,7 +4,7 @@ import { useColorMode, useColorModeValue, ColorModeButton } from "@/components/u
 const avatar = '/img/avatar.png'
 function Navbar(){
     return(
-        <Flex w={'100%'} bg={useColorModeValue('#1A1C20' , 'white')} justifyContent={'space-between'} h={'9vh'} color={useColorModeValue('white', 'black')} >
+        <Flex w={'100%'} bg={useColorModeValue(' #1A1C20' , 'white')} justifyContent={'space-between'} h={'9vh'} color={useColorModeValue('white', 'black')} >
             <Flex className="menu-title" h={'100%'} alignItems={'center'} fontSize={'1.4rem'} p={'0 1.2vw'} gap={'10px'}>
                 <Text>Dashboard</Text>
                 <ColorModeButton color={useColorModeValue('white', 'black')}/>
