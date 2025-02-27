@@ -1,4 +1,3 @@
-import "./sidebar.css";
 import { Box, Flex } from "@chakra-ui/react";
 import { VscHome } from "react-icons/vsc";
 import { RxPerson } from "react-icons/rx";
@@ -12,7 +11,7 @@ const Sidebar = () => {
 const logo =  '/img/logo-dark.png'
 const [isExpanded, setExpanded] = useState(false);
   return (
-      <Box className={'sidebar'} p={isExpanded ? '0 5px' : '0 0.5vw'} w={isExpanded ? '15%' : '4%'}  bg={useColorModeValue('#1A1C20', 'white')}
+      <Box className={'sidebar'} p={'0  15px'} w={'18%'}  bg={useColorModeValue('#171717', 'white')}
       minH={'100vh'}
       onMouseEnter={()=>{ 
         setExpanded(true);
@@ -23,32 +22,40 @@ const [isExpanded, setExpanded] = useState(false);
       }}
       >
         <Flex w={'100%'}  h={'9vh'} flexDir={'row'} alignItems={'center'} justifyContent={'space-between'}>  
-            <Flex justifyContent={isExpanded ? 'flex-start' : 'center'} alignItems={'center'} gap={'10px'} w={'100%'} color={useColorModeValue('white', 'black')}>
-              <Flex h={'4.5vh'} w={'4.5vh'} bg={useColorModeValue('white', 'rgb(26, 106, 255)')} borderRadius={'50%'} p={'5px'} alignItems={'center'}>
-             
+            <Flex gap={'10px'} justifyContent={'space-between'} alignItems={'center'} w={'100%'} color={useColorModeValue('white', 'black')}>
+              <Flex gap={'10px'} alignItems={'center'}>
+                <Flex h={'4.1vh'} w={'4.1vh'} bg={useColorModeValue('white', 'rgb(26, 106, 255)')} borderRadius={'50%'}  alignItems={'center'}>
+                </Flex>
+                <Text fontSize={'1.1rem'}>BodyFit</Text>
               </Flex>
-              <Text fontSize={'1.3rem'}>{isExpanded ? 'BodyFit': ''}</Text>
+              <Flex className="menu-title" h={'100%'} >
+                <ColorModeButton color={useColorModeValue('white', 'black')}/>
+            </Flex>
             </Flex>
          
         </Flex>
-        <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'5px'} 
-       
+        <Flex className="menu" w={'100%'} flexDir={'column'} justifyContent={'center'} gap={'15px'} 
+      p={'15px 5px 0 0'}
+       borderRadius={'10px'}
         css={{
           "& > div":{
-            p:'10px',
+            p:' 0 10px',
             borderRadius: '5px',
-            color: useColorModeValue('white', 'black')
+            color: useColorModeValue('rgb(192, 192, 192)', 'black'),
+            fontSize: '1rem',
+            gap: '10px',
+            h: '5.5vh',
           },
           "& > div:hover":{
             color: 'white',
-            bg: ' #074685'
+            bg: '#c43b00'
           }
         }}
         >
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><VscHome size={'20px'} /> {isExpanded ? 'Home':''}</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'} justifyContent={'flex-start'}><RxPerson size={'20px'} />{isExpanded ? 'Alunos':''}</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><GoGraph size={'20px'} />{isExpanded ? 'Financeiro':''}</Flex>
-          <Flex w={'100%'}gap={'15px'} flexDir={'row'} h={'6vh'} alignItems={'center'}  justifyContent={'flex-start'}><IoSettingsOutline size={'20px'} /> {isExpanded ? 'Configurações' : ''}</Flex>
+          <Flex w={'100%'} flexDir={'row'}  alignItems={'center'} justifyContent={'flex-start'}><VscHome size={'20px'} />Home</Flex>
+          <Flex w={'100%'} flexDir={'row'}  alignItems={'center'} justifyContent={'flex-start'}><RxPerson size={'20px'} />Aluno</Flex>
+          <Flex w={'100%'} flexDir={'row'}  alignItems={'center'}  justifyContent={'flex-start'}><GoGraph size={'20px'} />Financeiro</Flex>
+          <Flex w={'100%'} flexDir={'row'}  alignItems={'center'}  justifyContent={'flex-start'}><IoSettingsOutline size={'20px'} />Configurações</Flex>
         </Flex>
 
 

@@ -6,136 +6,79 @@ import { IoFastFoodOutline } from "react-icons/io5";
 import { HiOutlineBeaker } from "react-icons/hi";
 import { BsClipboardData } from "react-icons/bs";
 import WeekProgression from "./weekProgression";
-import DietDayStatus from "./drawerContent";
+
+
+import { IoIosArrowDown } from "react-icons/io";
+import { FaCircle } from "react-icons/fa";
 const breakfast = "/img/breakfast.jpg";
 const dinner = "/img/dinner.jpg";
 const lunch = "/img/lunch.jpg";
 const snack = "/img/snack.jpg";
 function DietContent() {
     return (
-        <Box h={'91vh'} width={'full'} bg={useColorModeValue(' #131517', '#c9c9c9')}>
-            {/* <WeekProgression /> */}
-            <Flex 
-            justify={'space-between'}
-            >
-                <Flex
-                    flexDir={'column'}
-                    gap={'1.5vw'}
-                    pt={'1.5vw'}
-
-                >
-                    <Flex
-                        p={'0 1.5vw'}
-                        color={useColorModeValue('white', 'black')}
-                        w={'100%'}
-                        gap={'1.5vw'}
-                        css={{
-                            "& > div": {
-                                h: '15vw',
-                                w: '14vw',
-                                fontSize: '1rem',
-                                bg: useColorModeValue('#1A1C20', ' white'),
-                                color: useColorModeValue('rgb(255, 255, 255)', 'black'),
-                                borderRadius: '5px',
-                                border: "none"
-                            }
-                        }}
-                    >
-                        <Card.Root overflow="hidden">
-                            <Image
-                                h={'55%'}
-                                src={breakfast}
-                            />
-                            <Card.Body p={'0.8vw 1vw'}>
-                                <Text>Café da manhã</Text>
-                            </Card.Body>
-                            <Card.Footer pl={'1vw'}>
-                                <DietDayStatus />
-                            </Card.Footer>
-                        </Card.Root>
-                        <Card.Root overflow="hidden">
-                            <Image
-                                h={'55%'}
-                                src={snack}
-                            />
-                            <Card.Body p={'0.8vw 1vw'}>
-                                <Text>Lanches</Text>
-                            </Card.Body>
-                            <Card.Footer pl={'1vw'}>
-                            <DietDayStatus />
-                            </Card.Footer>
-                        </Card.Root>
-                        <Card.Root  overflow="hidden">
-                            <Image
-                                h={'55%'}
-                                src={lunch}
-                            />
-                            <Card.Body p={'0.8vw 1vw'}>
-                                <Text>Almoço</Text>
-                            </Card.Body>
-                            <Card.Footer pl={'1vw'}>
-                            <DietDayStatus />
-                            </Card.Footer>
-                        </Card.Root>
-                        <Card.Root  overflow="hidden">
-                            <Image
-                                h={'55%'}
-                                src={dinner}
-                            />
-                            <Card.Body p={'0.8vw 1vw'}>
-                                <Text>Jantar</Text>
-                            </Card.Body>
-                            <Card.Footer pl={'1vw'}>
-                            <DietDayStatus />
-                            </Card.Footer>
-                        </Card.Root>
-                    </Flex>
-
-                    <Flex w={'100%'} p={'0 1.5vw'} flexDir={'column'}
-                    gap={'1.5vw'}
-                    css={{
-                        "& > div.box-chart": {
-                        width: '75%',
-                        borderRadius: '5px',
-                        bg: useColorModeValue('#1A1C20', ' white'),
-                        p: '0.8vw',
-                        color:'black'
+        <Box w={'full'} h={'full'} bg={' #060606'}>
+            <Box w={'full'} h={'90%'} p={'25px'} display={'grid'} gridTemplateColumns={'repeat(13, 1fr)'} gridTemplateRows={'repeat(2, 1fr)'} gridGap={'20px'} pt={'25px'}
+                css={{
+                    "& > div": {
+                        bg: '#171717',
+                        color: 'white',
+                        borderRadius: '10px',
+                        p: '4% 4% 2% 4%'
                     }
-                    }}
-                    >
-                        <Flex justifyContent={'space-between'}
-                              bg={useColorModeValue('#1A1C20', ' white')}
-                              p={'1vw 0.8vw'}
-                              borderRadius={'5px'}
-                            color={useColorModeValue('white', 'black')}
+                }}
+            >
+                <Box gridArea={'1 / 1 / 2 / 7;'}>
+                    <Flex flexDir={'column'} h={'100%'} alignItems={'flex-end'}>
+                        <Flex justifyContent={'space-between'} alignItems={'center'} mb={'4%'} w={'100%'}>
+                            <Text fontSize={'1.2rem'}>Chamados</Text>
+                            <Flex alignItems={'center'} gap={'10px'} border={'1px solid rgb(95, 95, 95)'} p={'1.5%'} borderRadius={'10px'}>
+                                <Text fontSize={'0.8rem'} color={'rgb(189, 188, 188)'}>Auxílio no aparelho</Text>
+                                <IoIosArrowDown />
+                            </Flex>
+                        </Flex>
+                        <Flex flexDir={'column'} gap={'15px'}
+                        w={'100%'}
                             css={{
                                 "& > div": {
-                                    gap: '0.8vw'
-                                },
+                                    fontSize: "1rem"
+                                }
                             }}
                         >
                             <Flex
+                                alignItems={'center'}
+                                gap={'10px'}
+                                color={"#cfcfcf"}
                             >
-                                <MdOutlineNoFood size={'1.3rem'} /> Calorias consumidas: 2000
-                                <Badge variant="solid" colorPalette="green">80%</Badge>
-                            </Flex>
-                            <Flex>
-                                <IoFastFoodOutline size={'1.3rem'} /> Calorias restantes: 500
-                                <Badge variant="solid" colorPalette="yellow">20%</Badge>
-                            </Flex>
-                            <Flex>
-                                <MdOutlineFitnessCenter size={'1.3rem'} /> Calorias queimadas: 1200
-                                <Badge variant="solid" colorPalette="green">100%</Badge>
-                            </Flex>
+                                <FaCircle color="#c43b00" />Allan Bispo dos Santos - supino inclinado 029</Flex>
+                            <Flex
+                                alignItems={'center'}
+                                gap={'10px'}
+                                color={" #cfcfcf"}
+                            >
+                                <FaCircle color="#c43b00" />Allan Bispo dos Santos - cadeira extensora 002</Flex>
+                            <Flex
+                                alignItems={'center'}
+                                gap={'10px'}
+                                color={"#cfcfcf"}
+                            >
+                                <FaCircle color="#c43b00" />Allan Bispo dos Santos - recepção</Flex>
                         </Flex>
-                        <Box className="box-chart">
-                            <Nutrients/>
-                        </Box>
+
+                        <Button w={'25%'} bg={'rgb(0, 0, 0)'} mt={'2%'}>Detalhes</Button>
                     </Flex>
-                </Flex>
-                
-            </Flex>
+                </Box>
+                <Box gridArea={'1 / 7 / 2 / 14;'}>
+
+                </Box>
+                <Box gridArea={'2 / 1 / 3 / 10;'}>
+
+                </Box>
+                <Box gridArea={'2 / 10 / 3 / 14;'}>
+
+                </Box>
+            </Box>
         </Box>
+
     )
 }
 export default DietContent; 
